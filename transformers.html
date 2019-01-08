@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transformers</title>
+    <link rel="stylesheet" href="https://875021336.github.io/Transformer/common.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1001283_qevi5wuc13.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1003652_mrwjoazcm.css">
+    <style>
+        html,body {
+            height: 100%;
+        }
+        header {
+            position: relative;
+            height: 100%;
+            min-height: 600px;
+            background: #000 url(https://875021336.github.io/Transformer/background.jpg) center center no-repeat;
+            background-size: cover;
+        }
+        header .logo {
+            color: #f7ba3e;
+            font-size: 32px;
+            float: left; 
+            margin-top: 10px;
+        }
+        header .nav {
+            float: right;
+        }
+        header .nav > li {
+            float: left;
+            margin: 10px;
+        }
+        header .nav a {
+            padding: 5px;
+            display: inline-block;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+        header .nav a:hover {
+            background: #f7ba3e;
+        }
+        header .intro {
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: #fff;
+            text-align: center;
+        }
+        header .intro h2{
+            font-size: 32px;
+        }
+        header .intro h3{
+            font-size: 46px;
+            margin-top: 20px;
+        }
+        header .intro .button{
+            margin-top: 20px;
+        }
+
+        section {
+            margin-top: 30px;
+            text-align: center;
+        }
+        section > h2 {
+            font-size:  40px;
+        }
+        section > p {
+            margin-top: 10px;
+        }
+        section > ul .iconfont {
+            font-size:  100px;
+        }
+        section .camp-intro > li {
+            float: left;
+            width: 50%;
+            padding: 30px 70px;
+        }
+        section > ul p {
+            margin-top: 10px;
+            font-size: 15px;
+        }
+
+        section .member figure {
+            width: 50%;
+            float: left;
+        }
+        section .member a {
+            display: block;
+        }
+        section .member figcaption {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        section .member p {
+            color: #666;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding: 5px 25px;
+        }
+
+        section .timeline img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid lightseagreen;
+        }
+        section .timeline > li::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        section .timeline > li {
+            margin-top: 35px;
+            position: relative;
+        }
+        section .timeline > li:nth-child(odd) {
+            padding-right: calc(50% - 50px);
+            text-align: right;
+        }
+        section .timeline > li:nth-child(odd) dl {
+            margin-right: 120px;
+        }
+        section .timeline > li:nth-child(odd) img {
+            float: right;
+        }
+        section .timeline > li:nth-child(even) {
+            padding-left: calc(50% - 50px);
+            text-align: left;
+        }
+        section .timeline > li:nth-child(even) dl {
+            margin-left: 120px;
+        }
+        section .timeline > li:nth-child(even) img {
+            float: left;
+        }
+        section .timeline dt {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        section .timeline dd:nth-child(2) {
+            color: #666;
+        }
+        section .timeline > li::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100px;
+            margin-left: 0px;
+            display: inline-block;
+            height: 65px;
+            width: 5px;
+            background-color: lightseagreen;
+        }
+        section .timeline > li:last-child::before {
+            height: 0;
+        }
+
+        section .starring figure {
+            width: 33%;
+            float: left;
+            margin-top: 30px;
+        }
+        section .starring img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid lightseagreen;
+        }
+        section .starring figcaption {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        section .starring p {
+            color: #666;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding: 5px 25px;
+        }
+       section .starring li {
+            display: inline-block;
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+        section .starring .iconfont {
+            display: block;
+            background-color: #222;
+            border-radius: 100%;
+            font-size: 20px;
+            line-height: 40px;
+            height: 40px;
+            width: 40px;
+            color: #fff;
+        }
+        section .starring a:hover {
+            background: #f7ba3e;
+            transition: all .3s;
+        }
+        section .starring p {
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 30px;
+        }
+        section .issued a  {
+            width: 33.3333%;
+            float: left;
+        }
+        section .issued a > img {
+            display: inline-block;
+            width: 33.3333%;
+        }
+
+        footer {
+            height: 100%;
+            min-height: 600px;
+            margin-top: 117px;
+            background: #000 url(https://875021336.github.io/Transformer/background3.jpg) center center no-repeat;
+            background-size: cover;
+        }
+        footer .intro {
+            color: #fff;
+            text-align: center;
+        }
+        footer .intro h2 {
+            display: inline-block;
+            font-size: 40px;
+            margin-top: 75px;
+            margin-bottom: 15px;
+        }
+        footer .infor {
+            float: left;
+            width: 50%;
+            min-height: 10px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        footer .infor > input,textarea {
+            display: block;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        footer .infor > textarea {
+            padding: 26px;
+            overflow: auto;
+        }
+        footer .infor .infor-1 {
+            padding: 26px;
+            margin-top: 15px;
+        }
+        footer .infor .infor-2 {
+            margin-top: 15px;
+            height: 236px;
+        }
+        footer .infor-button {
+            float: left;
+            width: 100%;
+            margin-top: 75px;
+            text-align: center;
+        }
+
+        section .footer1 {
+            float: left;
+            width:33.33%;
+        }
+        section .footer2 {
+            float: left;
+            width: 33.3333%;
+            margin-bottom: 10px;
+        }
+        section .footer3 {
+            display: block;
+            float: left;
+            width: 33.3333%;
+        }
+        section .footer3 a {
+            color: #f7ba3e;
+            opacity: 0.8;
+        }
+        section .footer3 a:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar layout clearfix">
+            <a href="#" class="logo">TRANSFORMERS</a>
+            <ul class="nav">
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Family</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="intro layout">
+                <h2>Honour to the end</h2>
+                <h3>One shall stand one shall fall</h3>
+                <a href="#" class="button">Tell me more</a>
+        </div>
+    </header>
+    <main class="layout">
+        <section>
+            <h2>阵营介绍</h2>
+            <p>Autobots VS Deceptions</p>
+            <ul class="camp-intro clearfix">
+                <li>
+                    <span class="iconfont icon-family1"></span>
+                    <h3>Autobots</h3>
+                    <p>
+                        博派是这个星球社会里的默认元素。本质上毫无攻击性的博派也会英勇顽强、
+                        竭尽全力地保护受到威胁的个体、城市甚至世界。
+                    </p>
+                </li>
+                <li>
+                    <span class="iconfont icon-family2"></span>
+                    <h3>Deceptions</h3>
+                    <p>
+                        具有钢铁意志的威震天利用一种自古就有，长期孕育的敌意来建立狂派的军队，
+                        并且借用了对博派的不满情绪，导演了赛伯坦上长达百万年之久的内战
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>主要成员</h2>
+            <div class="member clearfix">
+                <figure>
+                    <a href=""><img src="http://i.mtime.cn/act/transformers/images/temp/bigimg.jpg" alt=""></a>
+                    <figcaption>擎天柱</figcaption>
+                    <p>博派的领袖，集伟岸、强壮、智慧于一身。他深感自己的使命就是保护包括地球生命在内的一切生命。</p>
+                </figure>
+                <figure>
+                        <a href=""><img src="http://i.mtime.cn/act/transformers/images/temp/b/b2l.jpg" alt=""></a>
+                        <figcaption>大黄蜂</figcaption>
+                        <p>热忱，勇敢的小个子，大黄蜂是博派的通信和谍报人员，变形为一辆甲壳虫轿车。</p>
+                </figure>
+                <figure>
+                        <a href=""><img src="http://i.mtime.cn/act/transformers/images/temp/img1.jpg" alt=""></a>
+                        <figcaption>威震天</figcaption>
+                        <p>狂派的领袖，集残忍的力量，军人的狡诈，冷酷与恐怖于一身，渴望在消灭地球上的博派后返回塞伯坦实现征服之梦。</p>
+                </figure>
+                <figure>
+                        <a href=""><img src="http://i.mtime.cn/act/transformers/images/temp/c/c1l.jpg" alt=""></a>
+                        <figcaption>红蜘蛛</figcaption>
+                        <p>红蜘蛛变形为一架F15战斗机，他总是在探索如何取代威震天成为狂派首领</p>
+                </figure>
+            </div>
+        </section>
+        <section>
+            <h2>Timeline</h2>
+            <p>电影发展</p>
+            <ul class="timeline">
+                <li>
+                    <img src="https://875021336.github.io/Transformer/1.jpg" alt="">
+                    <dl>
+                        <dt>July 2017</dt>
+                        <dd>变形金刚1</dd>
+                        <dd>影片主要讲述了希亚·拉博夫饰演的山姆·维特维奇发现了寻找“火种源”的地图，而火种源是变形金刚的生命之源，
+                            正义的汽车人和邪恶的霸天虎为了争夺它而爆发了战争。
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <img src="https://875021336.github.io/Transformer/2.jpg" alt="">
+                    <dl>
+                        <dt>June 2009</dt>
+                        <dd>变形金刚2：堕落金刚的复仇</dd>
+                        <dd>讲述山姆因为掌握了有关变形金刚的起源以及在古老时期到访地球的线索而遭到霸天虎的追击。霸天虎为了获取这些信息，
+                        妄图生擒山姆。汽车人、美军和其它多国部队联合起来抵抗霸天虎的袭击。
+                         </dd>
+                    </dl>
+                </li>
+                <li>
+                    <img src="https://875021336.github.io/Transformer/3.jpg" alt="">
+                    <dl>
+                        <dt>July 2011</dt>
+                        <dd>变形金刚3：月黑之时</dd>
+                        <dd>讲述了阿波罗11号40年前登陆月球时原来早就发现了变形金刚的残骸，当年博派首领御天敌带着拯救塞伯坦球的秘密武器“能量柱”逃走，
+                            不幸坠落在月球。多年后，狂派威震天设下陷阱，让擎天柱带回御天敌和能量柱，掀起两派在地球的战事。
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <img src="https://875021336.github.io/Transformer/4.jpg" alt="">
+                    <dl>
+                        <dt>June 2014</dt>
+                        <dd>变形金刚4：绝境重生</dd>
+                        <dd>讲述了一群富商巨贾和科学精英试图利用变形金刚的技术来发展人类科技，但他们所取得的成就足以蚕食和毁灭整个世界，与此同时，
+                            一个古老而又强大的变形金刚力量正把目标瞄向了地球。
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <img src="https://875021336.github.io/Transformer/5.jpg" alt="">
+                    <dl>
+                        <dt>June 2017</dt>
+                        <dd>变形金刚5：最后的骑士</dd>
+                        <dd>讲述了地球陷入毁灭危机，以凯德·伊格尔为首的人类反抗小组，与汽车人联手反击霸天虎在内的入侵者的故事。</dd>
+                    </dl>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>剧组成员</h2>
+            <div class="starring clearfix">
+                <figure>
+                    <img src=" https://875021336.github.io/Transformer/member1.jpg" alt="">
+                    <figcaption>希亚·拉博夫</figcaption>
+                    <p>1986年6月11日出生于美国洛杉矶，美国影视演员。</p>
+                        <ul>
+                            <li>
+                                <a href="#" class="iconfont icon-twitter"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="iconfont icon-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="iconfont icon-Linkedin"></a>
+                            </li>
+                        </ul>
+                </figure>
+                <figure>
+                    <img src="https://875021336.github.io/Transformer/member2.jpg" alt="">
+                    <figcaption>泰瑞斯·吉布森</figcaption>
+                    <p>1978年12月30日出生于洛杉矶，美国影视演员、歌手。</p>
+                    <ul>
+                        <li>
+                            <a href="#" class="iconfont icon-twitter"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="iconfont icon-facebook"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="iconfont icon-Linkedin"></a>
+                        </li>
+                    </ul>
+                </figure>
+                <figure>
+                    <img src="https://875021336.github.io/Transformer/member3.jpg" alt="">
+                    <figcaption>马克·沃尔伯</figcaption>
+                    <p>1971年6月5日出生于美国马萨诸塞州波士顿，美国影视演员、歌手、制作人。</p>
+                    <ul>
+                        <li>
+                            <a href="#" class="iconfont icon-twitter"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="iconfont icon-facebook"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="iconfont icon-Linkedin"></a>
+                        </li>
+                    </ul>
+                </figure>
+                <p>When you are looking at the stars, please put the brightest star night sky as my soul</p>
+            </div>
+            <div class="issued">
+                <a href="" class="clearfix">
+                    <img src="https://875021336.github.io/Transformer/issued1.jpg" alt="">
+                </a>
+                <a href="" class="clearfix">
+                    <img src="https://875021336.github.io/Transformer/issued2.jpg" alt="">
+                </a>
+                <a href="" class="clearfix">
+                    <img src="https://875021336.github.io/Transformer/issued3.jpg" alt="">
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer>    
+            <div class="intro layout clearfix">
+                <h2>Contact Us</h2>
+                <p>Please light our darkest hour.One day，one heart and one mind. </p>
+            </div>
+            <div class="infor clearfix">
+                <input type="text" class="infor-1" placeholder="Your Name*">
+                <input type="text" class="infor-1" placeholder="Your Email*">
+                <input type="text" class="infor-1" placeholder="Your Phone*">
+            </div>
+            <div class="infor clearfix">
+                <textarea class="infor-2 clearfix" placeholder="Your Message*"></textarea>
+            </div>
+            <div class="infor-button clearfix">
+                <a href="#" class="button">Send Message</a>
+            </div>      
+    </footer>
+    <section>
+            <div class="footer1 clearfix">
+                <span>Copyright © Your Website 2014</span>
+            </div>
+                <ul class="starring footer2 clearfix">
+                    <li>
+                        <a href="#" class="iconfont icon-twitter"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="iconfont icon-facebook"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="iconfont icon-Linkedin"></a>
+                    </li>
+                </ul>
+            <div class="footer3 ">
+                <a href="#"> Privacy Policy </a>
+                <a href="#"> Terms of Use </a>
+            </div>
+    </section>
+    
+</body>
+</html>
